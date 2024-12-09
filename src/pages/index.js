@@ -147,7 +147,7 @@ export default function Home() {
           hoy, mañana o a tus 60.<br/><br/>
           Nuestros asesores certificados saben
           cómo hacer que cada peso esté
-          seguro y te genere más lana, todo
+          seguro y te genere más dinero, todo
           mientras tú te encargas de disfrutar
           la vida.<br/><br/>
           Y no, no somos una pirámide.<br/><br/>
@@ -242,7 +242,7 @@ export default function Home() {
 
 <Blockbuster
         overhead="Qué esperar"
-        title="No somos una pirámide, somos una empresa con 50 años que sabe cuidar tu lana."
+        title="No somos una pirámide, somos una empresa con 50 años que sabe cuidar tu dinero."
         image={i02}
       />
       <section className="reading-container my-16 space-y-32">
