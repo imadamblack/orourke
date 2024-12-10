@@ -116,10 +116,9 @@ export default function Home() {
         <div className="container w-full text-center text-white z-10 p-8">
           <h1
             className="md:w-2/3 mx-auto relative font-medium ft-9 text-white [text-shadow:_2px_2px_0_rgb(0_0_0_/_20%)]">
-            ¿Sigues creyendo que ahorrar en tu cuenta de débito es lo mejor? 
-            {/*No somos una constructora más de GDL, hacemos que tu terreno y ladrillos valgan 20% más en un año.*/}
+            ¿Sigues creyendo que ahorrar en tu cuenta de débito es lo mejor? <br/>
+            Déjame te cuento que Santa Claus son los papás.
           </h1>
-          <p className=" ft-6 mt-8 [text-shadow:_2px_2px_0_rgb(0_0_0_/_20%)]">Déjame te cuento que Santa Claus son los papás.</p>
           <p className="mt-8">Abre tu cuenta desde $1,000 | Cero Comisiones  | Liquidez Diaria</p>
           <div className="flex flex-col justify-start items-center mt-12">
             <Link href="#contact">
@@ -129,9 +128,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-{/*___HERO__________________________________________________________*/}
-
 
 {/*___READ_01__________________________________________________________*/}
 
@@ -164,8 +160,6 @@ export default function Home() {
           <p className="-ft-1 text-center">{cta.description}</p>
         </div>
       </section>
-
-{/*___READ_01__________________________________________________________*/}
 
 {/*___BENEFICIOS__________________________________________________________*/}
 
@@ -236,8 +230,6 @@ export default function Home() {
 
     </section>
 
-{/*___BENEFICIOS__________________________________________________________*/}
-
 {/*___ENTREGABLES__________________________________________________________*/}
 
 <Blockbuster
@@ -268,8 +260,6 @@ export default function Home() {
         </div>
       </section>
 
-{/*___ENTREGABLES__________________________________________________________*/}
-
 {/*___TARGET__________________________________________________________*/}
 
 <Blockbuster
@@ -285,8 +275,7 @@ export default function Home() {
               <Image src={img_inversor_01} className="object-cover object-center"/>
             </div>
             <div className="p-8 ">
-              <h3 className="!mb-0">Inversionista</h3>
-              <p className="overhead text-black">Conservador</p>
+              <h3 className="!mb-0">Conservador</h3>
               <p className="!mt-0 text-white">
                 Si prefieres dormir tranquilo y
                 ver un crecimiento constante
@@ -303,8 +292,7 @@ export default function Home() {
               <Image src={img_inversor_02} className="object-cover object-center"/>
             </div>
             <div className="p-8 ">
-              <h3 className="mb-0">Inversionista</h3>
-              <p className="overhead text-black">Moderado</p>
+              <h3 className="mb-0">Moderado</h3>
               <p className="!mt-0 text-white">
                 Si estás listo para un balance entre
                 seguridad y rendimiento, puedes
@@ -322,8 +310,7 @@ export default function Home() {
               <Image src={img_inversor_03} className="object-cover object-center"/>
             </div>
             <div className="p-8 ">
-              <h3 className="!mb-0">Inversionista</h3>
-              <p className="overhead text-black">Agresivo</p>
+              <h3 className="!mb-0">Agresivo</h3>
               <p className="!mt-0 text-white">
                 ¿Buscas maximizar el crecimiento?
                 Nuestro fondo te permite invertir sin
@@ -352,14 +339,10 @@ export default function Home() {
 
       </section>
 
-{/*___TARGET__________________________________________________________*/}
-
-
-
 {/*___CASOS__________________________________________________________*/}
 
 <Blockbuster
-        overhead="Casos"
+        overhead="Atención"
         title="Nuestra atención nos ha mantenido abiertos por más de 50 años"
         image={i05}
       />
@@ -375,16 +358,11 @@ export default function Home() {
 
         <div className="flex flex-col justify-center items-center mt-16">
           <Link href="#contact">
-            <a onClick={() => setLastClick('Casos')} className="button mb-4">{cta.main}</a>
+            <a onClick={() => setLastClick('atencion')} className="button mb-4">{cta.main}</a>
           </Link>
           <p className="-ft-1 text-center">{cta.description}</p>
         </div>
       </section>
-      
-
-{/*___CASOS__________________________________________________________*/}
-
-
 
 {/*___TESTIMONIOS__________________________________________________________*/}
 
@@ -418,12 +396,6 @@ export default function Home() {
 
       </section>
 */}
-
-{/*___TESTIMONIOS__________________________________________________________*/}
-
-
-
-
 
 {/*___ALIANZAS__________________________________________________________*/}
 
@@ -464,15 +436,6 @@ export default function Home() {
         </div>
       </section>
 
-{/*___ALIANZAS__________________________________________________________*/}
-
-
-
-
-
-
-
-
 {/*___FAQS__________________________________________________________*/}
 
       <Blockbuster
@@ -485,10 +448,6 @@ export default function Home() {
           questions={faqs}
         />
       </section>
-
-
-{/*___FAQS__________________________________________________________*/}
-
 
 {/*___CONTACTO__________________________________________________________*/}
 
@@ -503,7 +462,7 @@ export default function Home() {
               <p className="ft-1 text-white">Ya llegaste hasta aquí.</p>
               <p className="ft-1 text-white">
               Compártenos unos datos y llena unas preguntas para que uno de nuestros asesores
-              certificados por la (AMIB) se ponga en contacto contigo.
+              certificados por la AMIB se ponga en contacto contigo.
               </p>
             </div>
             <OptInForm
@@ -512,9 +471,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-
-{/*___CONTACTO__________________________________________________________*/}
     </>
   );
 }

@@ -10,48 +10,86 @@ import { restrictNumber } from '../utils/formValidators';
 
 const formSteps = [
   {
-    name: 'investment',
-    title: `Ok, prometo hacer esto lo más rápido y sencillo posible, <br/>son solo 4 preguntas.`,
-    description: '¿Con qué fin estás buscando construir casa?',
+    name: 'age',
+    title: `Ok, prometo hacer esto lo más rápido y sencillo posible, <br/>son solo 6 preguntas.`,
+    description: '¿En qué rango de edad te encuentras?',
     type: 'radio',
     options: [
-      {value: 'vivienda', label: 'Para habitarla'},
-      {value: 'inversión', label: 'Para venderla'},
+      {value: '0-24', label: '24 años o menos'},
+      {value: '25-40', label: 'De 25 a 40 años'},
+      {value: '41-50', label: 'De 41 a 50 años'},
+      {value: '51-60', label: 'De 51 a 60 años'},
+      {value: '60+', label: 'Más de 60 años'},
     ],
-    cols: 2,
+    cols: 1,
     inputOptions: {required: true}
   },
   {
-    name: 'timeframe',
-    title: '¿Cuándo tienes pensado comenzar tu proyecto?',
+    name: 'horizon',
+    title: '¿Por cuánto tiempo planeas dejar tu dinero invertido?',
     description: 'Selecciona una opción por favor',
     type: 'radio',
     options: [
-      {value: 'inmediato', label: 'De inmediato'},
-      {value: '1-mes', label: 'En 1 mes'},
-      {value: '3-meses', label: 'En 3 meses'},
-      {value: '6-meses', label: 'En 6 meses'},
+      {value: '3-meses', label: 'Menos de 3 meses'},
+      {value: '1-año', label: 'Hasta 1 año'},
+      {value: '3-años', label: 'Hasta 3 años'},
+      {value: '5-años', label: '5 años o más'},
+    ],
+    cols: 1,
+    inputOptions: {required: true}
+  },
+  {
+    name: 'goal',
+    title: '¿Cuál es tu principal meta de inversión?',
+    description: 'Selecciona una opción por favor',
+    type: 'radio',
+    options: [
+      {value: 'retiro', label: 'Mi retiro'},
+      {value: 'ingresos', label: 'Tener ingresos pasivos'},
+      {value: 'emergencias', label: 'Ahorro para emergencias'},
+      {value: 'educacion', label: 'La educación de mis hijos'},
+    ],
+    cols: 1,
+    inputOptions: {required: true}
+  },
+  {
+    name: 'savings',
+    title: '¿Cómo describirías tu "colchón" de ahorros?',
+    description: 'Selecciona una opción por favor',
+    type: 'radio',
+    options: [
+      {value: 'insuficiente', label: 'Mis reservas son insuficientes'},
+      {value: 'limitado', label: 'Tengo ahorro pero en una emergencia tomaría de mis inversiones'},
+      {value: 'adecuado', label: 'Cuento con un par de meses de sueldo ahorrados'},
+      {value: 'super', label: 'Tengo más que suficiente y otras inversiones que cubren mis necesidades'},
+    ],
+    cols: 1,
+    inputOptions: {required: true}
+  },
+  {
+    name: 'knowledge',
+    title: '¿Cuánto sabes sobre inversiones?',
+    description: 'Selecciona una opción por favor',
+    type: 'radio',
+    options: [
+      {value: 'bajo', label: 'Sé muy poco pero me parece interesante'},
+      {value: 'medio', label: 'Más o menos, no es la primera vez que invierto'},
+      {value: 'alto', label: 'Conozco bien el mercado financiero'},
     ],
     cols: 1,
     inputOptions: {required: true}
   },
   {
     name: 'budget',
-    title: '¿En cuál de estos rangos te sientes cómodo para realizar tu inversión?',
+    title: '¿En cuál de estos rangos te sientes cómodo para realizar tu inversión mensual?',
     description: 'Selecciona una opción por favor',
     type: 'radio',
     options: [
-      {value: '3mdp-4mdp', label: 'De $3,000,000 a $4,000,000 mxn'},
-      {value: '4mdp-6mdp', label: 'De $4,000,000 a $6,000,000 mxn'},
-      {value: '6mdp+', label: 'Más de $6,000,000'},
+      {value: '3-5k', label: 'Entre $3,000 y $5,000 mxn mensuales'},
+      {value: '5-10k', label: 'Entre $5,000 y $10,000 mxn mensuales'},
+      {value: '10k+', label: 'Más de $10,000 mxn mensuales'},
     ],
     cols: 1,
-    inputOptions: {required: true}
-  },
-  {
-    name: 'zone',
-    title: '¿En qué zona de la ciudad te gustaría construir tu casa?',
-    type: 'text',
     inputOptions: {required: true}
   },
 ];
@@ -136,7 +174,7 @@ export default function Survey() {
                   return (
                     // eslint-disable-next-line react/jsx-key
                     <div className={`my-20 flex-grow ${formStep === idx ? 'block' : 'hidden'}`}>
-                      <p className="ft-4 sans" dangerouslySetInnerHTML={{__html: title}}/>
+                      <p className="ft-4 sans font-bold" dangerouslySetInnerHTML={{__html: title}}/>
                       <p className="ft-2 mt-4 mb-12" dangerouslySetInnerHTML={{__html: description}}/>
                       <input
                         {...register(name, inputOptions)}
@@ -151,7 +189,7 @@ export default function Survey() {
                   return (
                     // eslint-disable-next-line react/jsx-key
                     <div className={`my-20 flex-grow ${formStep === idx ? 'block' : 'hidden'}`}>
-                      <p className="ft-4 sans" dangerouslySetInnerHTML={{__html: title}}/>
+                      <p className="ft-4 sans font-bold" dangerouslySetInnerHTML={{__html: title}}/>
                       <p className="ft-2 mt-4 mb-12" dangerouslySetInnerHTML={{__html: description}}/>
                       <input
                         {...register(name, inputOptions)}
@@ -168,7 +206,7 @@ export default function Survey() {
                   return (
                     // eslint-disable-next-line react/jsx-key
                     <div className={`my-20 ${formStep === idx ? 'flex flex-col' : 'hidden'}`}>
-                      <p className="ft-4 sans" dangerouslySetInnerHTML={{__html: title}}/>
+                      <p className="ft-4 sans font-bold" dangerouslySetInnerHTML={{__html: title}}/>
                       <p className="ft-2 mt-4 mb-12" dangerouslySetInnerHTML={{__html: description}}/>
                       <Radio
                         name={name}
@@ -186,7 +224,7 @@ export default function Survey() {
                   return (
                     // eslint-disable-next-line react/jsx-key
                     <div className={`my-20 ${formStep === idx ? 'flex flex-col' : 'hidden'}`}>
-                      <p className="ft-4 sans" dangerouslySetInnerHTML={{__html: title}}/>
+                      <p className="ft-4 sans font-bold" dangerouslySetInnerHTML={{__html: title}}/>
                       <p className="ft-2 mt-4 mb-12" dangerouslySetInnerHTML={{__html: description}}/>
                       <Checkbox
                         name={name}
@@ -204,7 +242,7 @@ export default function Survey() {
                   return (
                     // eslint-disable-next-line react/jsx-key
                     <div className={`my-20 ${formStep === idx ? 'block' : 'hidden'}`}>
-                      <p className="ft-4 sans" dangerouslySetInnerHTML={{__html: title}}/>
+                      <p className="ft-4 sans font-bold" dangerouslySetInnerHTML={{__html: title}}/>
                       <p className="ft-2 mt-4 mb-12" dangerouslySetInnerHTML={{__html: description}}/>
                       <textarea
                         {...register(name, inputOptions)}
