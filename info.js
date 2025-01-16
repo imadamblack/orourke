@@ -7,9 +7,9 @@ export const info = {
     recipients: ["contacto@oafondos.com.mx"],
     subject: "Nuevo prospecto O'Rourke",
   },
-  phoneNumber: "+523338802600",
+  phoneNumber: "+523343251854",
   whatsapp: {
-    value: "+523330287551",
+    value: "+523343251854",
     message: "Buen día, quisiera más información sobre los fondos de inversión",
   },
   social: {
