@@ -6,20 +6,14 @@ import { useEffect, useState } from 'react';
 import scrollDepth from '../utils/scrollDepth';
 import Faqs from '../components/faqs';
 
-import i00 from '../../public/landing/00.png';
-import i01 from '../../public/landing/001.png';
-import i02 from '../../public/landing/002.png';
-import i03 from '../../public/landing/29.png';
-import i04 from '../../public/landing/004.png';
+import i00 from '../../public/landing2/01.png';
+import i02 from '../../public/landing/inversor03.png';
+import i03 from '../../public/landing2/03.png';
+import i04 from '../../public/landing2/05.png';
 import i05 from '../../public/landing/Casos01.png';
 import i06 from '../../public/landing/006.png';
 import i07 from '../../public/landing/FAQS01.png';
-import c01 from '../../public/landing/c01.jpeg';
 import c02 from '../../public/landing/c02.png';
-import c03 from '../../public/landing/c03.jpeg';
-import t01 from '../../public/landing/t01.png';
-import t02 from '../../public/landing/t02.png';
-import t03 from '../../public/landing/t03.png';
 import p01 from '../../public/landing/p01.png';
 import p02 from '../../public/landing/p02.webp';
 import p03 from '../../public/landing/p03.png';
@@ -45,8 +39,7 @@ import img_logo2 from '../../public/landing/icons/02.png';
 import img_logo3 from '../../public/landing/icons/03.png';
 import img_inversor_01 from '../../public/landing/inversor01.png';
 import img_inversor_02 from '../../public/landing/inversor02.png';
-import img_inversor_03 from '../../public/landing/inversor03.png';
-
+import img_inversor_03 from '../../public/landing2/06.png';
 
 
 export default function Home() {
@@ -55,71 +48,74 @@ export default function Home() {
   useEffect(() => {
     scrollDepth({
       values: [25, 50, 75, 100],
-      callback: (value) => {fbq('trackCustom', `Scroll Depth: ${value}`);
-        console.log('Scroll Depth', value);},
+      callback: (value) => {
+        fbq('trackCustom', `Scroll Depth: ${value}`);
+        console.log('Scroll Depth', value);
+      },
     });
   });
 
   const cta = {
     main: 'Agenda una llamada, clic',
-    description: 'Obtén una asesoría de Finanzas',
+    description: 'Obtén una asesoría de inversión, sin costo',
   };
 
   const faqs = [
     {
-      q: "¿Qué pasa si necesito retirar mi dinero antes de tiempo?",
-      a: "Puedes retirar tu dinero cualquier día sin perder los rendimientos generados hasta ese momento."
+      q: '¿Qué pasa si necesito retirar mi dinero antes de tiempo?',
+      a: 'Puedes retirar tu dinero cualquier día sin perder los rendimientos generados hasta ese momento.',
     },
     {
-      q: "¿Es realmente seguro este fondo? ",
-      a: "Sí, nuestros fondos están regulados por la CNBV y gestionados por asesores certificados, garantizando la seguridad de tu inversión. "
+      q: '¿Es realmente seguro este fondo? ',
+      a: 'Sí, nuestros fondos están regulados por la CNBV y gestionados por asesores certificados, garantizando la seguridad de tu inversión. ',
     },
     {
-      q: "¿Puedo empezar con una pequeña cantidad?",
-      a: "Claro, puedes comenzar desde $1,000 MXN, lo que te permite explorar la inversión sin grandes compromisos."
+      q: '¿Puedo empezar con una pequeña cantidad?',
+      a: 'Claro, puedes comenzar desde $1,000 MXN, lo que te permite explorar la inversión sin grandes compromisos.',
     },
     {
-      q: "¿Cuánto tiempo toma abrir la cuenta?",
-      a: "El proceso de apertura es rápido. Tras la consulta inicial y la entrega de documentos, tendrás tu cuenta en 48 horas."
+      q: '¿Cuánto tiempo toma abrir la cuenta?',
+      a: 'El proceso de apertura es rápido. Tras la consulta inicial y la entrega de documentos, tendrás tu cuenta en 48 horas.',
     },
     {
-      q: "¿Cómo sé que realmente obtendré los rendimientos prometidos? ",
-      a: "Contamos con rendimientos históricos sólidos y un equipo que revisa y ajusta estrategias para garantizar el mayor retorno posible bajo el marco de regulación."
-    }
+      q: '¿Cómo sé que realmente obtendré los rendimientos prometidos? ',
+      a: 'Contamos con rendimientos históricos sólidos y un equipo que revisa y ajusta estrategias para garantizar el mayor retorno posible bajo el marco de regulación.',
+    },
   ];
 
   return (
     <>
 
-{/*___HERO__________________________________________________________*/}
-      <section className="relative min-h-[80vh] w-full flex flex-col md:justify-end items-center bg-black">
+      {/*___HERO__________________________________________________________*/}
+      <section className="relative min-h-[80vh] w-full flex flex-col md:justify-end items-center bg-brand-2">
 
         <div className="relative min-h-[24rem] flex-grow w-full md:absolute top-0 inset-x-0 bottom-1/2 md:bottom-0">
           <div
-            className="w-full h-[16rem] bottom-0 absolute bg-gradient-to-t from-black via-transparent to-transparent md:opacity-60 z-10"/>
+            className="w-full h-[16rem] bottom-0 absolute bg-gradient-to-t from-brand-2 via-transparent to-transparent md:opacity-60 z-10"/>
           <Image src={i00} layout="fill" className="object-cover object-bottom"/>
         </div>
-        <div className=" flex inline">
-    {/*Logo de Conducef*/}
-          <div className="flex justify-center items-center mx-4 p-4">
-              <Link href="/" passhref>
-                <Image src={p13} alt='logo Conducef' width={72} height={72} objectFit="contain"/>
-              </Link>
-          </div>
-    {/*Logo de Buro*/}
-          <div className="flex justify-center items-center mx-4 p-4">
-              <Link href="/" passhref>
-                <Image src={p09} alt='logo buroio de credito' width={72} height={72} objectFit="contain"/>
-              </Link>
-          </div>
-      </div>
+        {/*<div className=" flex inline">*/}
+        {/*  /!*Logo de Conducef*!/*/}
+        {/*  <div className="flex justify-center items-center mx-4 p-4">*/}
+        {/*    <Link href="/" passhref>*/}
+        {/*      <Image src={p13} alt="logo Conducef" width={72} height={72} objectFit="contain"/>*/}
+        {/*    </Link>*/}
+        {/*  </div>*/}
+        {/*  /!*Logo de Buro*!/*/}
+        {/*  <div className="flex justify-center items-center mx-4 p-4">*/}
+        {/*    <Link href="/" passhref>*/}
+        {/*      <Image src={p09} alt="logo buroio de credito" width={72} height={72} objectFit="contain"/>*/}
+        {/*    </Link>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
         <div className="container w-full text-center text-white z-10 p-8">
           <h1
             className="md:w-2/3 mx-auto relative font-medium ft-9 text-white [text-shadow:_2px_2px_0_rgb(0_0_0_/_20%)]">
-            ¿Sigues creyendo que ahorrar en tu cuenta de débito es lo mejor? <br/>
-            Déjame te cuento que Santa Claus son los papás.
+            {/*¿Sigues creyendo que ahorrar en tu cuenta de débito es lo mejor? <br/>*/}
+            {/*Déjame te cuento que Santa Claus son los papás.*/}
+            Comienza a invertir en una empresa con más de 50 años en el mercado, no en otra pirámide
           </h1>
-          <p className="mt-8">Abre tu cuenta desde $1,000 | Cero Comisiones  | Liquidez Diaria</p>
+          <p className="mt-8">Abre tu cuenta desde $1,000<br/>Cero Comisiones<br/>Liquidez Diaria</p>
           <div className="flex flex-col justify-start items-center mt-12">
             <Link href="#contact">
               <a onClick={() => setLastClick('hero')} className="button mb-4">{cta.main}</a>
@@ -129,7 +125,7 @@ export default function Home() {
         </div>
       </section>
 
-{/*___READ_01__________________________________________________________*/}
+      {/*___READ_01__________________________________________________________*/}
 
       <section className="reading-container my-16">
         <p>
@@ -161,12 +157,12 @@ export default function Home() {
         </div>
       </section>
 
-{/*___BENEFICIOS__________________________________________________________*/}
+      {/*___BENEFICIOS__________________________________________________________*/}
 
-<Blockbuster
+      <Blockbuster
         overhead="Beneficios"
         title="No limites a tu dinero en una cuenta de débito, déjalo crecer"
-        image={c02}
+        image={i02}
       />
       <section className="reading-container my-4">
         <h5>
@@ -175,52 +171,52 @@ export default function Home() {
       </section>
 
 
-    <section className="min-h-[40vh] w-screen flex items-center justify-center  py-16 mt-0 mb-0 ">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 w-full max-w-screen-xl">
-        {/* Tarjeta 1 */}
-        <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
-          <Image
-            src={img_logo1}// Reemplaza con tu URL de logo
-            alt="Logo 1"
-            className="w-24 h-24 object-cover mb-7"
-          />
-          <h3 className="text-xl font-semibold text-gray-800 mb-2 py-10">Rendimientos sólidos:</h3>
-          <p className="text-gray-600 text-center">
-            Haz que tu dinero crezca con tasas anuales de entre <b>9% y 12%</b>, superando lo que ofrecen cuentas de ahorro o pagarés.
-          </p>
-        </div>
+      <section className="min-h-[40vh] w-screen flex items-center justify-center  py-16 mt-0 mb-0 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 w-full max-w-screen-xl">
+          {/* Tarjeta 1 */}
+          <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
+            <Image
+              src={img_logo1}// Reemplaza con tu URL de logo
+              alt="Logo 1"
+              className="w-24 h-24 object-cover mb-7"
+            />
+            <h3 className="text-xl font-semibold text-gray-800 mb-2 py-10">Rendimientos sólidos:</h3>
+            <p className="text-gray-600 text-center">
+              Haz que tu dinero crezca con tasas anuales de entre <b>9% y 12%</b>, superando lo que ofrecen cuentas de
+              ahorro o pagarés.
+            </p>
+          </div>
 
-        {/* Tarjeta 2 */}
-        <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
-          <Image
-            src={img_logo2} // Reemplaza con tu URL de logo
-            alt="Logo 2"
-            className="w-24 h-24 object-cover mb-7"
-          />
-          <h3 className="text-xl font-semibold text-gray-800 mb-2 py-10">Liquidez y flexibilidad:</h3>
-          <p className="text-gray-600 text-center">
-            Podrás retirar tu <b>dinero cuando lo necesites</b>, sin sacrificar rentabilidad.
-          </p>
-        </div>
+          {/* Tarjeta 2 */}
+          <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
+            <Image
+              src={img_logo2} // Reemplaza con tu URL de logo
+              alt="Logo 2"
+              className="w-24 h-24 object-cover mb-7"
+            />
+            <h3 className="text-xl font-semibold text-gray-800 mb-2 py-10">Liquidez y flexibilidad:</h3>
+            <p className="text-gray-600 text-center">
+              Podrás retirar tu <b>dinero cuando lo necesites</b>, sin sacrificar rentabilidad.
+            </p>
+          </div>
 
-        {/* Tarjeta 3 */}
-        <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
-          <Image
-            src={img_logo3} // Reemplaza con tu URL de logo
-            alt="Logo 3"
-            className="w-24 h-24 object-cover mb-7"
-          />
-          <h3 className="text-xl font-semibold text-gray-800 mb-2 py-10">Asesoría experta:</h3>
-          <p className="text-gray-600 text-center">
-            Nuestro <b>equipo certificado y regulado</b> está disponible para guiar cada paso de tu inversión.
-          </p>
+          {/* Tarjeta 3 */}
+          <div className="flex flex-col items-center bg-white p-6 rounded-lg shadow-lg">
+            <Image
+              src={img_logo3} // Reemplaza con tu URL de logo
+              alt="Logo 3"
+              className="w-24 h-24 object-cover mb-7"
+            />
+            <h3 className="text-xl font-semibold text-gray-800 mb-2 py-10">Asesoría experta:</h3>
+            <p className="text-gray-600 text-center">
+              Nuestro <b>equipo certificado y regulado</b> está disponible para guiar cada paso de tu inversión.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    
-        
-    <section>
+
+      <section>
         <div className="flex flex-col justify-center items-center py-12">
           <Link href="#contact">
             <a onClick={() => setLastClick('benefits')} className="button mb-4">{cta.main}</a>
@@ -228,28 +224,34 @@ export default function Home() {
           <p className="-ft-1 text-center">{cta.description}</p>
         </div>
 
-    </section>
+      </section>
 
-{/*___ENTREGABLES__________________________________________________________*/}
+      {/*___ENTREGABLES__________________________________________________________*/}
 
-<Blockbuster
+      <Blockbuster
         overhead="Qué esperar"
         title="No somos una pirámide, somos una empresa con 50 años que sabe cuidar tu dinero."
-        image={i02}
+        image={i03}
       />
       <section className="reading-container my-16 space-y-32">
         <p>Te cuento como es invertir con nosotros:</p>
-        
+
         <ol>
           <li className="ft-2 mb-4">Desde la primera consulta, recibirás <b>información clara y personalizada.</b></li>
-          <li className="ft-2 mb-4"> Te guiaremos en la elección del fondo ideal para tu perfil, y gracias a nuestro<b> proceso regulado, tu capital estará seguro en todo momento.</b>
+          <li className="ft-2 mb-4"> Te guiaremos en la elección del fondo ideal para tu perfil, y gracias a
+            nuestro<b> proceso regulado, tu capital estará seguro en todo momento.</b>
           </li>
-          <li className="ft-2 mb-4">Desde el depósito inicial hasta la compra del fondo, cada etapa se realiza con la máxima transparencia y 
-                                    <b> el respaldo de instituciones reguladoras</b>.</li>
-          <li className="ft-2 mb-4">Queremos transformar tus expectativas de inversión en una <b>realidad tangible y accesible</b>. 
+          <li className="ft-2 mb-4">Desde el depósito inicial hasta la compra del fondo, cada etapa se realiza con la
+            máxima transparencia y
+            <b> el respaldo de instituciones reguladoras</b>.
           </li>
-          <li className="ft-2 mb-4">Tenemos un equipo con más de <b>50 asesores certificados por la AMIB</b> (Asociación Mexicana de Instituciones Bursátiles) para que tu inversión crezca
-                                    como lo planeas.</li>
+          <li className="ft-2 mb-4">Queremos transformar tus expectativas de inversión en una <b>realidad tangible y
+            accesible</b>.
+          </li>
+          <li className="ft-2 mb-4">Tenemos un equipo con más de <b>50 asesores certificados por la AMIB</b> (Asociación
+            Mexicana de Instituciones Bursátiles) para que tu inversión crezca
+            como lo planeas.
+          </li>
         </ol>
 
         <div className="flex flex-col justify-center items-center mt-16">
@@ -260,14 +262,14 @@ export default function Home() {
         </div>
       </section>
 
-{/*___TARGET__________________________________________________________*/}
+      {/*___TARGET__________________________________________________________*/}
 
-<Blockbuster
+      <Blockbuster
         overhead="Target"
         title="¿Eres más conservador o vas por todas las fichas?"
-        image={i03}
+        image={i04}
       />
-      
+
       <section className="my-16 w-screen">
         <div className="container grid md:grid-cols-3 gap-8">
           <div className="w-full relative border rounded-2xl border-brand-3 shadow-md bg-black">
@@ -324,9 +326,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        
-      </section>
 
+      </section>
 
 
       <section className="reading-container my-10">
@@ -339,21 +340,23 @@ export default function Home() {
 
       </section>
 
-{/*___CASOS__________________________________________________________*/}
+      {/*___CASOS__________________________________________________________*/}
 
-<Blockbuster
+      <Blockbuster
         overhead="Atención"
         title="Nuestra atención nos ha mantenido abiertos por más de 50 años"
         image={i05}
       />
       <section className="reading-container my-16 space-y-32">
         <p>Te cuento como es invertir con nosotros:</p>
-        
+
         <ol>
           <li className="ft-2 mb-4"><b>Consulta y asesoría gratuita</b> en cualquier momento del año.</li>
           <li className="ft-2 mb-4"><b>Guía de inversión personalizada</b>, adaptada a tus objetivos financieros.
           </li>
-          <li className="ft-2 mb-4">Revisión trimestral de portafolio para <b>maximizar rendimientos</b> y ajustar la estrategia.</li>
+          <li className="ft-2 mb-4">Revisión trimestral de portafolio para <b>maximizar rendimientos</b> y ajustar la
+            estrategia.
+          </li>
         </ol>
 
         <div className="flex flex-col justify-center items-center mt-16">
@@ -364,9 +367,9 @@ export default function Home() {
         </div>
       </section>
 
-{/*___TESTIMONIOS__________________________________________________________*/}
+      {/*___TESTIMONIOS__________________________________________________________*/}
 
-{/* Sin Render
+      {/* Sin Render
       <Blockbuster
         overhead="Testimonios"
         title="Y no solo lo digo yo, esto es lo que han dicho nuestros clientes"
@@ -397,7 +400,7 @@ export default function Home() {
       </section>
 */}
 
-{/*___ALIANZAS__________________________________________________________*/}
+      {/*___ALIANZAS__________________________________________________________*/}
 
       <Blockbuster
         overhead="Alianzas"
@@ -406,25 +409,42 @@ export default function Home() {
       />
       <section className="my-16">
         <div className="container grid grid-cols-3 md:grid-cols-6 gap-1">
-          <div className="relative p-8 flex justify-center items-center"><Image src={p01}/></div> {/*Scotia*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p06}/></div> {/*Santander*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p07}/></div> {/*banorte*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p02}/></div> {/*CompassGrup*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p03}/></div> {/*Afirme*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p04}/></div> {/*Valmex*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p05}/></div> {/*Azimut*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p08}/></div> {/*btg*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p01}/></div>
+          {/*Scotia*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p06}/></div>
+          {/*Santander*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p07}/></div>
+          {/*banorte*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p02}/></div>
+          {/*CompassGrup*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p03}/></div>
+          {/*Afirme*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p04}/></div>
+          {/*Valmex*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p05}/></div>
+          {/*Azimut*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p08}/></div>
+          {/*btg*/}
           {/*<div className="relative p-8 flex justify-center items-center"><Image src={p09}/></div>*/} {/*Buro*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p10}/></div> {/*Franklin*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p11}/></div> {/*GBM*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p12}/></div> {/*SURA*/}
-         {/*<div className="relative p-8 flex justify-center items-center"><Image src={p13}/></div>*/} {/*Condusef*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p14}/></div> {/*Intercam*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p15}/></div> {/*Invex*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p16}/></div> {/*NacionalFin*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p17}/></div> {/*Finamex*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p18}/></div> {/*Vector*/}
-          <div className="relative p-8 flex justify-center items-center"><Image src={p19}/></div> {/*Monex*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p10}/></div>
+          {/*Franklin*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p11}/></div>
+          {/*GBM*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p12}/></div>
+          {/*SURA*/}
+          {/*<div className="relative p-8 flex justify-center items-center"><Image src={p13}/></div>*/} {/*Condusef*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p14}/></div>
+          {/*Intercam*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p15}/></div>
+          {/*Invex*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p16}/></div>
+          {/*NacionalFin*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p17}/></div>
+          {/*Finamex*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p18}/></div>
+          {/*Vector*/}
+          <div className="relative p-8 flex justify-center items-center"><Image src={p19}/></div>
+          {/*Monex*/}
         </div>
         <div className="reading-container">
           <div className="flex flex-col justify-center items-center mt-16">
@@ -436,7 +456,7 @@ export default function Home() {
         </div>
       </section>
 
-{/*___FAQS__________________________________________________________*/}
+      {/*___FAQS__________________________________________________________*/}
 
       <Blockbuster
         overhead="Preguntas frecuentes"
@@ -449,20 +469,20 @@ export default function Home() {
         />
       </section>
 
-{/*___CONTACTO__________________________________________________________*/}
+      {/*___CONTACTO__________________________________________________________*/}
 
       {/* Contacto  */}
       <section id="contact" className="border-t border-brand-1 bg-black py-20">
         <div className="container">
           <div className="w-full md:w-1/2 mx-auto">
             <h2 className="font-semibold text-white tracking-wide">
-            Agenda hoy mismo una sesión gratuita de asesoría patrimonial
+              Agenda hoy mismo una sesión gratuita de asesoría patrimonial
             </h2>
             <div className="mt-20 mb-12">
               <p className="ft-1 text-white">Ya llegaste hasta aquí.</p>
               <p className="ft-1 text-white">
-              Compártenos unos datos y llena unas preguntas para que uno de nuestros asesores
-              certificados por la AMIB se ponga en contacto contigo.
+                Compártenos unos datos y llena unas preguntas para que uno de nuestros asesores
+                certificados por la AMIB se ponga en contacto contigo.
               </p>
             </div>
             <OptInForm
