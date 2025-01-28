@@ -27,7 +27,7 @@ const formSteps = [
   {
     name: 'horizon',
     title: '¿Por cuánto tiempo planeas dejar tu dinero invertido?',
-    description: 'Selecciona una opción por favor',
+    description: 'Ojo, tu dinero nunca se congela, es solo para darnos una idea de tu perfil',
     type: 'radio',
     options: [
       {value: '3-meses', label: 'Menos de 3 meses'},
